@@ -1,3 +1,97 @@
+# Document Tracking System
+
+## Description
+The Document Tracking System is a web-based application designed to manage and track the status of uploaded documents. The system provides features for researchers and administrators, including file uploads, approvals, and detailed document history.
+
+## Tools Used
+- **Backend:** PHP, CodeIgniter 4
+- **Frontend:** HTML, CSS, Bootstrap, JavaScript
+- **Charts & Modals:** Chart.js, SweetAlert
+- **Database:** MySQL
+
+## Features
+1. **User Authentication:**
+   - Users can register and log in as either a researcher or an admin.
+2. **File Management:**
+   - Researchers can upload files.
+   - Both researchers and admins can download or delete files.
+3. **File Approval:**
+   - Admins can approve or reject uploaded files.
+4. **Document Tracking:**
+   - Users can track when a document was uploaded and whether it has been approved or rejected.
+5. **Visual Insights:**
+   - Graphs are generated using Chart.js to display document status and other metrics.
+
+## Database Schema
+
+### Database Name: `dtms`
+
+#### Tables:
+1. **`documents`**
+   - `id` (INT, PK): Document ID
+   - `document_name` (VARCHAR(255)): Document name
+   - `file_name` (TEXT): Uploaded file name
+   - `uploaded_at` (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP): Upload timestamp
+   - `status` (ENUM('pending', 'approved', 'rejected'), DEFAULT 'pending'): Document status
+   - `user_id` (INT): References `users.id`
+
+2. **`document_history`**
+   - `id` (INT, PK): History record ID
+   - `document_id` (INT): References `documents.id`
+   - `user_id` (INT): References `users.id`
+   - `uploaded_at` (TIMESTAMP): Timestamp when the document was uploaded
+   - `changed_status_at` (TIMESTAMP): Timestamp when the status was changed
+
+3. **`users`**
+   - `id` (INT, PK): User ID
+   - `first_name` (VARCHAR(255)): First name
+   - `last_name` (VARCHAR(255)): Last name
+   - `username` (VARCHAR(255)): Username
+   - `password` (VARCHAR(255)): Password (hashed)
+   - `role` (ENUM('researcher', 'admin')): User role
+
+## Database Initialization Script
+```sql
+CREATE DATABASE dtms;
+
+USE dtms;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('researcher', 'admin') NOT NULL
+);
+
+CREATE TABLE documents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    document_name VARCHAR(255) NOT NULL,
+    file_name TEXT NOT NULL,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE document_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    document_id INT NOT NULL,
+    user_id INT NOT NULL,
+    uploaded_at TIMESTAMP NOT NULL,
+    changed_status_at TIMESTAMP,
+    FOREIGN KEY (document_id) REFERENCES documents(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+```
+
+## Installation
+1. Clone the repository.
+2. Configure the `.env` file with your database credentials.
+3. Run the provided SQL script to initialize the database.
+4. Start the server and access the application in your browser.
+
 # CodeIgniter 4 Framework
 
 ## What is CodeIgniter?
@@ -58,3 +152,6 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+## License
+This project is open-source and available under the [MIT License](LICENSE).
