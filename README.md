@@ -90,7 +90,7 @@ CREATE TABLE document_history (
 1. Clone the repository.
 2. Configure the `.env` file with your database credentials.
 3. Run the provided SQL script to initialize the database.
-4. Start the server and access the application in your browser.
+4. Start the server (`php spark serve`) and access the application in your browser.
 
 # CodeIgniter 4 Framework
 
