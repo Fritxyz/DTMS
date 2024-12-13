@@ -1,0 +1,257 @@
+INFO - 2024-12-04 06:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-04 06:08:45 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/Auth" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/Auth')
+ 2 APPPATH\Views\partial\sidebar.php(66): url_to('/Auth')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Dashboard\index.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Dashboard\\index.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Dashboard/index', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Dashboard/index')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 06:09:01 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/Auth/login" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/Auth/login')
+ 2 APPPATH\Views\partial\sidebar.php(66): url_to('/Auth/login')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Dashboard\index.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Dashboard\\index.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Dashboard/index', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Dashboard/index')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 06:09:03 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/Auth/login" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/Auth/login')
+ 2 APPPATH\Views\partial\sidebar.php(66): url_to('/Auth/login')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Dashboard\index.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Dashboard\\index.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Dashboard/index', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Dashboard/index')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+INFO - 2024-12-04 06:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 06:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 07:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 07:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 07:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-04 07:42:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Home.php"
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Home.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home', [], true)
+ 3 APPPATH\Controllers\AdminController.php(12): view('Home')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+INFO - 2024-12-04 08:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 08:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-04 08:08:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Main/main.php"
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Main/main.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Main/main', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('Main/main')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:18:52 --> CodeIgniter\Router\Exceptions\RouterException: The route for "Layout/Main" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('Layout/Main')
+ 2 APPPATH\Views\partial\sidebar.php(26): url_to('Layout/Main')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:24:25 --> CodeIgniter\Router\Exceptions\RouterException: The route for "pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:26:15 --> CodeIgniter\Router\Exceptions\RouterException: The route for "pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+INFO - 2024-12-04 08:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-04 08:35:32 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: DTMS]
+in APPPATH\Views\pages\adminDashboard.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-04 08:36:02 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: DTMS]
+in APPPATH\Views\pages\adminDashboard.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-04 08:41:11 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('/pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:41:19 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('/pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:41:20 --> CodeIgniter\Router\Exceptions\RouterException: The route for "/pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('/pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('/pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-04 08:41:33 --> CodeIgniter\Router\Exceptions\RouterException: The route for "pages/getdocument" cannot be found.
+[Method: GET, Route: DTMS]
+in SYSTEMPATH\Helpers\url_helper.php on line 494.
+ 1 SYSTEMPATH\Helpers\url_helper.php(494): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('pages/getdocument')
+ 2 APPPATH\Views\partial\sidebar.php(38): url_to('pages/getdocument')
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\partial\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('partial/sidebar', [], true)
+ 6 APPPATH\Views\Layout\main.php(42): view('partial/sidebar')
+ 7 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\DTMS\\app\\Views\\Layout\\main.php')
+ 8 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Layout/main', [], true)
+10 APPPATH\Controllers\Home.php(9): view('Layout/main')
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\DTMS\\public\\index.php')
+INFO - 2024-12-04 09:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 10:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 10:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-04 10:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

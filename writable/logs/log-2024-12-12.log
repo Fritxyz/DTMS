@@ -1,0 +1,736 @@
+INFO - 2024-12-12 08:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 08:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 08:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 08:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 08:57:46 --> CSRF token verified.
+INFO - 2024-12-12 08:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 08:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:02:08 --> CSRF token verified.
+INFO - 2024-12-12 09:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:02:48 --> CSRF token verified.
+INFO - 2024-12-12 09:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:02:48 --> mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:02:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: researcher-dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:02:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'12\'
+GROUP BY `documents`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'12\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:02:48 --> [Caused by] mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'12\'
+GROUP BY `documents`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'12\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'12\'
+GROUP BY `documents`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:09:06 --> CSRF token verified.
+INFO - 2024-12-12 09:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:09:34 --> CSRF token verified.
+INFO - 2024-12-12 09:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:10:53 --> mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:10:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: researcher-dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:10:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'13\'
+GROUP BY `documents`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'13\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:10:53 --> [Caused by] mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'13\'
+GROUP BY `documents`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'13\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'13\'
+GROUP BY `documents`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:12:02 --> CSRF token verified.
+INFO - 2024-12-12 09:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:12:03 --> mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:12:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: researcher-dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `documents`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:03 --> [Caused by] mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `documents`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `documents`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `documents`.`id`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:12:40 --> mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:12:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: researcher-dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:40 --> [Caused by] mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:12:47 --> mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:12:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: researcher-dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:12:47 --> [Caused by] mysqli_sql_exception: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.documents.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = \'7\'
+GROUP BY `users`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+WHERE `users`.`id` = :users.id:
+GROUP BY `users`.`id`', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ResearcherController.php(43): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResearcherController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResearcherController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:51 --> CSRF token verified.
+INFO - 2024-12-12 09:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:14:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:15:22 --> CSRF token verified.
+INFO - 2024-12-12 09:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:15:54 --> CSRF token verified.
+INFO - 2024-12-12 09:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:18:34 --> CSRF token verified.
+INFO - 2024-12-12 09:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:20:55 --> CSRF token verified.
+INFO - 2024-12-12 09:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:22:40 --> CSRF token verified.
+INFO - 2024-12-12 09:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:23:01 --> CSRF token verified.
+INFO - 2024-12-12 09:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:23:47 --> CSRF token verified.
+DEBUG - 2024-12-12 09:23:47 --> Received docId: 17
+DEBUG - 2024-12-12 09:23:47 --> Received actionType: rejected
+INFO - 2024-12-12 09:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:27:01 --> CSRF token verified.
+INFO - 2024-12-12 09:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:27:35 --> CSRF token verified.
+INFO - 2024-12-12 09:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:30:56 --> CSRF token verified.
+INFO - 2024-12-12 09:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:32:49 --> CSRF token verified.
+INFO - 2024-12-12 09:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:33:10 --> CSRF token verified.
+INFO - 2024-12-12 09:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:33:50 --> CSRF token verified.
+DEBUG - 2024-12-12 09:33:50 --> Received docId: 19
+DEBUG - 2024-12-12 09:33:50 --> Received actionType: rejected
+INFO - 2024-12-12 09:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-12 09:34:13 --> mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Kieth\Downloads\DTMS\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documen...', 0)
+#1 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documen...')
+#2 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documen...')
+#3 C:\Users\Kieth\Downloads\DTMS\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documen...', Array, false)
+#4 C:\Users\Kieth\Downloads\DTMS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Kieth\Downloads\DTMS\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Kieth\Downloads\DTMS\app\Controllers\SharedController.php(35): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(933): App\Controllers\SharedController->trackingDocument()
+#8 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SharedController))
+#9 C:\Users\Kieth\Downloads\DTMS\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Kieth\Downloads\DTMS\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Kieth\Downloads\DTMS\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Kieth\Downloads\DTMS\system\rewrite.php(44): require_once('C:\\Users\\Kieth\\...')
+#14 {main}
+CRITICAL - 2024-12-12 09:34:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: admin-dashboard/document-tracker]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\SharedController.php(35): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SharedController->trackingDocument()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SharedController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:34:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\SharedController.php(35): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SharedController->trackingDocument()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SharedController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+CRITICAL - 2024-12-12 09:34:13 --> [Caused by] mysqli_sql_exception: Expression #10 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dtms.document_history.changed_status_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `documents`.*, `users`.`first_name`, `users`.`last_name`, `users`.`username`, `document_history`.`changed_status_at`
+FROM `documents`
+JOIN `users` ON `users`.`id` = `documents`.`user_id`
+JOIN `document_history` ON `documents`.`id` = `document_history`.`document_id`
+GROUP BY `documents`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\SharedController.php(35): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SharedController->trackingDocument()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SharedController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Kieth\\Downloads\\DTMS\\public\\index.php')
+INFO - 2024-12-12 09:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:37:16 --> CSRF token verified.
+INFO - 2024-12-12 09:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-12 09:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
